@@ -9,8 +9,8 @@
             $this->html .= htmlTags::headingOne('Upload Form');
             $this->html .= $form;
         }
-        public function post() {                         //The target directory is specified.
-            $target_dir = "uploads/";
+        public function post() {                         
+            $target_dir = "uploads/";			//The target directory is specified.
             $target_file = $target_dir . $_FILES["fileToUpload"]["name"];
             $filename = $_FILES["fileToUpload"]["name"];
 
