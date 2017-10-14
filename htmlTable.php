@@ -1,24 +1,22 @@
-<?php 
-	class htmlTable extends page
-    {
+<?php
+    class htmlTable extends page {                          //Tis class displays the uploaded file in a tabular format
         public function get() {
             $csv = $_GET['filename'];
-            chdir('uploads');
+            chdir('uploads');                                     //change the directory to 'uploads' to read the file
             $file = fopen($csv,"r");
-            $this->html .= htmlTags::tableFormat();
+            htmlTags::tableFormat();               //call tableFormat() function from htmlTags class for table display
             $row = 1;
-            while (($data=fgetcsv($file))!== FALSE){
+            while (($data=fgetcsv($file))!== FALSE){    //while and for loops used to loop through 2-dimensional array
                 foreach($data as $value) {
                     if ($row == 1) {
-                        $this->html .= htmlTags::tableHeadFont($value);
+                        htmlTags::tableHeader($value);
                     }else{
-                        $this->html .= htmlTags::tableContent($value);
+                        htmlTags::tableContent($value);
                     }
                 }
                 $row++;
-                echo("</tr>");
+                htmlTags::breakTableRow();
             }
-            echo("</table>");
             fclose($file);
         }
     }
