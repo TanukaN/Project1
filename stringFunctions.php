@@ -1,8 +1,7 @@
 <?php
-//this is a group of string functions
-  class stringFunctions {
-     static public function printThis($inputText) {
-        return print($inputText);
-     }
-  }
+    class stringFunctions {				//string functions used in the project
+        static public function printThis($inputText) {
+            return print($inputText);
+        }
+    }
 ?>
