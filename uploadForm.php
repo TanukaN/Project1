@@ -2,7 +2,7 @@
     class uploadForm extends page
     {
         public function get() {                          //The get function displays the Upload Form and requests input from the user.
-            $form = '<form action="index.php?page=uploadForm" method="POST" enctype="multipart/form-data">';
+            $form = '<form action="index.php" method="POST" enctype="multipart/form-data">';
             $form .= '<input type="file" name="fileToUpload" id="fileToUpload">';
             $form .= '<input type="submit" value="Upload CSV" name="submit">';
             $form .= '</form>';
