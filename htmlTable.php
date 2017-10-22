@@ -1,5 +1,5 @@
 <?php
-    class htmlTable extends page {                          //Tis class displays the uploaded file in a tabular format
+    class htmlTable extends page {                          //This class displays the uploaded csv file in a tabular format
         public function get() {
             $csv = $_GET['filename'];
             chdir('uploads');                                     //change the directory to 'uploads' to read the file
